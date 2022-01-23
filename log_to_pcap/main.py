@@ -8,15 +8,15 @@ import sys
 # Press the green button in the gutter to run the script.
 import os
 import sys
-import scapy.layers.l2
+#import scapy.layers.l2
 import json
-import re
-import scapy.sendrecv
-import scapy.packet
-import scapy.layers.inet
-import scapy.utils
-from time import sleep
-import time
+# import re
+# import scapy.sendrecv
+# import scapy.packet
+# import scapy.layers.inet
+# import scapy.utils
+# from time import sleep
+# import time
 import progressbar
 
 from scapy.all import *
@@ -158,11 +158,11 @@ if __name__ == '__main__':
     try:
         if (os.path.isdir(file_or_dir_name)):
             for file_name in os.listdir(file_or_dir_name):
-                if not file_name.endswith(".pcap") and not not file_name.endswith(".zip"):
-                    print ('converting flie: {}', file_name)
+                if not file_name.endswith(".pcap") and not file_name.endswith(".zip"):
+                    print ('converting file: {}', file_name)
                     convert_to_pcap(log_file_name=file_name)
         else:
-            print ('converting flie: {}', file_or_dir_name)
+            print ('converting file: {}', file_or_dir_name)
             convert_to_pcap(log_file_name=file_or_dir_name)
     except Exception:
         print ("exception")
